@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+
+#myColor{
+    color: rgb(0, 195, 255);
+}
+#canvasArea{
+    border: 1px solid black;
+}
