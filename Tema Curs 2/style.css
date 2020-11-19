@@ -1,0 +1,15 @@
+#idCanvas{
+    border:2px solid blue;
+    background-color: rgb(77, 109, 243);
+}
+
+#idCanvas2{
+    padding: 10px;
+}
+
+#idButton{
+    position: relative;
+    top: 20px;
+    left: 23%;
+}
+
