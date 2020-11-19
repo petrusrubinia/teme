@@ -15,5 +15,3 @@ button.addEventListener("click", () =>{
     context.fillStyle = 'rgb('+getRndInteger(0,255) + ',' + getRndInteger(0,255) + ',' + getRndInteger(0,255)+ ')';
     context.fillRect(getRndInteger(0,sizeWidth),getRndInteger(0,sizeHeight), 20, 20);
 });
-
-//6.
