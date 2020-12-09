@@ -19,6 +19,6 @@ io.on('connection', function(socket){
 
     socket.emit('counter', valueCounter);
     socket.on('counter',function(counter){
-        socket.emit('counter', counter);
+        io.emit('counter', counter);
     } )
 })

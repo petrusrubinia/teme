@@ -45,11 +45,3 @@ canvas {
   padding: 10px;
   margin: 10px;
 }
-
-#back-button{
-  left: 480px;
-  position: absolute;
-  height: 30px;
-  width: 60px;
-  margin-top: 20px;
-}

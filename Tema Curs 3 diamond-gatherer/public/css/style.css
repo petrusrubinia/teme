@@ -38,18 +38,3 @@ canvas {
 #game-canvas {
   border: 1px solid black;
 }
-
-.game-element{
-  border: 1px solid black;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-}
-
-#back-button{
-  left: 480px;
-  position: absolute;
-  height: 30px;
-  width: 60px;
-  margin-top: 20px;
-}
