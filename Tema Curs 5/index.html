@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+</head>
+
+<body>
+    <!--IMAGES-->
+    <img src='assets/map.png' class='display-none' id='map-image'>
+    <img src='assets/space-ranger-player.png' class='display-none' id='space-ranger' />
+    <img src="assets/pink-lady-player.png" class="display-none" id="pink-lady" />
+    <img src="assets/diamond.png" class="display-none" id="diamond" />
+    <img src="assets/player-disconnected.png" class="display-none" id="player-disconnected" />
+    <img src="assets/space-ranger-player-with-diamond.png" class="display-none" id="space-ranger-with-diamond" />
+    <img src="assets/pink-lady-player-with-diamond.png" class="display-none" id="pink-lady-with-diamond" />
+    <img src="assets/space-ranger-won.png" class="display-none" id="space-ranger-won" />
+    <img src="assets/pink-lady-won.png" class="display-none" id="pink-lady-won" />
+    <img src="assets/space-ranger-bullet.png" class="display-none" id="space-ranger-bullet" />
+    <img src="assets/pink-lady-bullet.png" class="display-none" id="pink-lady-bullet" />
+
+    <!--MENU-->
+    <div id="menu">
+        <div id='create-game-container'>
+            <input id='game-name-input' type='text' placeholder='Enter the game name' />
+            <button id='create-game-button'>Create Game!</button>
+            <p id='game-name-missing' class='display-none'>Please enter a name to create a new game!</p>
+        </div>
+
+        <div id="game-list"></div>
+    </div>
+
+    <!--GAME-->
+    <div id='game-container' class='display-none'>
+        <canvas id='game-canvas' width='960' height='640'></canvas><br>
+        <button id='back-to-menu'>Back!</button>
+        <p id="waiting-for-player">Waiting for second player! You cannot move.</p>
+    </div>
+
+</body>
+
+</html>
