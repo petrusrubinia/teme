@@ -107,13 +107,8 @@ class Player {
             x: this.x + PLAYER_DIM.width / 2,
             y: this.y + PLAYER_DIM.height / 2
         }
-        if (
-            center.x >= object.x && center.x <= (object.x + object.width) &&
-            center.y >= object.y && center.y <= (object.y + object.height)
-        ) {
-            return true;
-        }
-        return false;
+        return center.x >= object.x && center.x <= (object.x + object.width) &&
+            center.y >= object.y && center.y <= (object.y + object.height);
     }
 
     checkBaseCollision() {

@@ -25,8 +25,6 @@ socket.on('game-loop', function (data) {
     document.getElementById('back-to-menu').classList.add('display-none');
     document.getElementById('game-container').classList.remove('display-none');
     context.drawImage(document.getElementById('map-image'), 0, 0);
-    var canvas = document.getElementById("game-canvas");
-
     data.objectsForDraw.forEach(function (objectForDraw) {
         context.drawImage(
             document.getElementById(objectForDraw.imageId),
@@ -35,17 +33,17 @@ socket.on('game-loop', function (data) {
     })
     if (data.gameInProgress) {
         document.getElementById('waiting-for-player').classList.add('display-none');
-        context.font = "30px Comic Sans MS";
-        context.fillStyle = "white";
-        context.textAlign = "center";
-        context.fillText("Space Ranger " + data.score['space-ranger'] + " : " + data.score['pink-lady'] + " Pink Lady", canvas.width / 2, canvas.height - 20);
-        context.fillText("There are " + data.leftDiamonds + " diamonds left.", canvas.width / 2, 30);
+        logText(data);
     }
-    else {
-        document.getElementById('waiting-for-player').classList.remove('display-none');
-    }
-
 })
+function logText(data){
+    var canvas = document.getElementById("game-canvas");
+    context.font = "30px Comic Sans MS";
+    context.fillStyle = "white";
+    context.textAlign = "center";
+    context.fillText("Space Ranger " + data.score['space-ranger']  + " : " +data.score['pink-lady'] + " Pink Lady", canvas.width / 2, canvas.height - 20);
+    context.fillText("There are " + data.leftDiamonds + " diamonds left.", canvas.width / 2, 30);
+}
 
 document.addEventListener("keydown", function (event) {
     switch (event.key) {

@@ -137,7 +137,6 @@ const gameLoop = (roomId) => {
           'space-ranger': game.players[0].score,
           'pink-lady': game.players[1].score
         }
-        var len = (param) => param != "";
         data.leftDiamonds = game.diamonds.filter(Boolean).length;
       }
       io.to(roomId).emit('game-loop', data);
