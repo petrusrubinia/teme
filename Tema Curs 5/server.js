@@ -41,6 +41,7 @@ io.on('connection', function (socket) {
     console.log('[User joined ' + gameId + '] room');
     socket.join(gameId);
     io.to('menu').emit('add-game-to-list', { gameName: gameName, gameId: gameId });
+    socket.emit('show-game-container');
   })
 
   socket.on('start-moving-player', function (direction) {
@@ -64,6 +65,7 @@ io.on('connection', function (socket) {
     socket.join(gameId);
     games[gameId].generateDiamonds();
     io.to('menu').emit('remove-game-from-list', gameId);
+    socket.emit('show-game-container');
   })
 
   socket.on('disconnect', function () {

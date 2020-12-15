@@ -21,9 +21,6 @@ document.getElementById('create-game-button').addEventListener('click', function
 })
 
 socket.on('game-loop', function (data) {
-    document.getElementById('menu').classList.add('display-none');
-    document.getElementById('back-to-menu').classList.add('display-none');
-    document.getElementById('game-container').classList.remove('display-none');
     context.drawImage(document.getElementById('map-image'), 0, 0);
     data.objectsForDraw.forEach(function (objectForDraw) {
         context.drawImage(
@@ -36,12 +33,12 @@ socket.on('game-loop', function (data) {
         logText(data);
     }
 })
-function logText(data){
+function logText(data) {
     var canvas = document.getElementById("game-canvas");
     context.font = "30px Comic Sans MS";
     context.fillStyle = "white";
     context.textAlign = "center";
-    context.fillText("Space Ranger " + data.score['space-ranger']  + " : " +data.score['pink-lady'] + " Pink Lady", canvas.width / 2, canvas.height - 20);
+    context.fillText("Space Ranger " + data.score['space-ranger'] + " : " + data.score['pink-lady'] + " Pink Lady", canvas.width / 2, canvas.height - 20);
     context.fillText("There are " + data.leftDiamonds + " diamonds left.", canvas.width / 2, 30);
 }
 
@@ -124,4 +121,10 @@ document.getElementById('back-to-menu').addEventListener('click', function () {
     socket.emit('back-to-menu', document.getElementById('back-to-menu').dataset.gameId);
     document.getElementById('game-container').classList.add('display-none');
     document.getElementById('menu').classList.remove('display-none');
+})
+
+socket.on('show-game-container', function () {
+    document.getElementById('menu').classList.add('display-none');
+    document.getElementById('back-to-menu').classList.add('display-none');
+    document.getElementById('game-container').classList.remove('display-none');
 })
